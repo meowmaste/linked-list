@@ -3,7 +3,7 @@
 
 This application builds a doubly-linked list of 200 nodes with random values between 1 and 100. It will remove any duplicate nodes so each value is in the list no more than one time. 
 
-#### And example with values less than 10: 
+#### An example with values less than 10: 
 
 Input:
 
