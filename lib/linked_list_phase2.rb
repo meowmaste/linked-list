@@ -49,21 +49,31 @@ class List
   end
 
   def remove_dupes
-    current_node = head
-    duplicates = [] 
+    current_node = head 
+    
     while(!current_node.nil?) do 
       value = current_node.value
       next_node = current_node.nexxt
+      current_check_node = current_node.nexxt
 
-      if duplicates.include? value 
-        delete(current_node)
-      else 
-        duplicates << value 
+      while(!current_check_node.nil?) do
+        if value == current_check_node.value 
+          delete(current_node)
+          break
+        end 
+        current_check_node = current_check_node.nexxt
       end 
-
+      
       current_node = next_node
-
     end 
   end 
 
 end
+
+list = List.new 
+200.times do |i|
+  list.add(rand(100))
+end 
+list.print
+list.remove_dupes
+list.print
